@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Match {
 
@@ -21,6 +23,7 @@ public class Match {
   private String matchWinner;
   private String result;
   private String resultMargin;
+  @JsonIgnore
   private String method;
   private String umpire1;
   private String umpire2;
