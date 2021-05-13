@@ -6,7 +6,7 @@ function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/teams/:teamName/match/:year">
+                <Route path="/teams/:teamName/matches/:year">
                     <MatchPage />
                 </Route>
                 <Route path="/teams/:teamName">

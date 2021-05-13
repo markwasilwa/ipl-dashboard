@@ -1,13 +1,18 @@
 import { React } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export const MatchDetailCard = ({ ...props }) => {
 
+    const { year } = useParams();
+
     if (!props.match) return false;
 
+    const teamName = props.teamName;
     const { team1, team2, date, venue, matchWinner, result, resultMargin } = props.match
-    const otherTeam = props.teamName === team1 ? team2 : team1
+    const otherTeam = teamName === team1 ? team2 : team1
+
     const otherTeamRoute = `/teams/${otherTeam}`;
+    const teamMatchesRoute = `/teams/${teamName}/matches?year=${year}`;
 
     return (
         <div className="MatchDetailCard">
@@ -17,6 +22,7 @@ export const MatchDetailCard = ({ ...props }) => {
             <div>
                 <h4>On {date} at {venue}</h4>
                 <h4>{matchWinner} won by {resultMargin} {result}</h4>
+                {year && <p>View <Link to={teamMatchesRoute}>Matches</Link></p>}
             </div>
         </div>
     );
