@@ -36,6 +36,14 @@ export const TeamPage = ({ ...props }) => {
             <div className="match-detail-container">
                 <MatchDetailCard match={team?.matches[0]} teamName={teamName} />
             </div>
+            <div className="other-match-details">
+                <h3>First innings</h3>
+                <p>{team?.matches[0].team1}</p>
+                <h3>Second innings</h3>
+                <p>{team?.matches[0].team2}</p>
+                <h3>Player of match</h3>
+                <p>{team?.matches[0].playerOfMatch}</p>
+            </div>
             { team && team.matches.slice(1).map((match, idx) => {
                     return <MatchSmallCard key={idx} match={match} teamName={teamName} />
                 })

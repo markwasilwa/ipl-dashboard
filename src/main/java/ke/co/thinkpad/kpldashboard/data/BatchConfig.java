@@ -59,8 +59,8 @@ public class BatchConfig {
     return new JdbcBatchItemWriterBuilder<Match>()
         .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
         .sql(
-            "INSERT INTO match (id,  city,  date, venue, team1, team2,  toss_winner,  toss_decision,  match_winner,  result,  result_margin,  method,  umpire1,  umpire2) "
-                + " VALUES (:id,:city,:date,:venue,:team1,:team2,:tossWinner,:tossDecision,:matchWinner,:result,:resultMargin,:method,:umpire1,:umpire2)")
+            "INSERT INTO match (id,  city,  date, venue, team1, team2,  toss_winner,  toss_decision,  match_winner,  result,  result_margin,  method, player_of_match, umpire1,  umpire2) "
+                + " VALUES (:id,:city,:date,:venue,:team1,:team2,:tossWinner,:tossDecision,:matchWinner,:result,:resultMargin,:method, :playerOfMatch, :umpire1,:umpire2)")
         .dataSource(dataSource).build();
   }
 

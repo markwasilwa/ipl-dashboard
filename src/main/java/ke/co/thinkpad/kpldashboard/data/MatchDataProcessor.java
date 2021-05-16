@@ -23,7 +23,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     match.setDate(LocalDate.parse(matchInput.getDate(), df));
     
-    match.setPlayerOfmatch(matchInput.getPlayer_of_match());
+    match.setPlayerOfMatch(matchInput.getPlayer_of_match());
     match.setVenue(matchInput.getVenue());
 
     // set team 1 and team 2 depending on innings order
@@ -45,7 +45,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     match.setTossWinner(matchInput.getToss_winner());
     match.setTossDecision(matchInput.getToss_decision());
     match.setResult(matchInput.getResult());
-    match.setPlayerOfmatch(matchInput.getPlayer_of_match());
+    match.setPlayerOfMatch(matchInput.getPlayer_of_match());
     match.setMatchWinner(matchInput.getWinner());
     match.setResultMargin(matchInput.getResult_margin());
     match.setUmpire1(matchInput.getUmpire1());
