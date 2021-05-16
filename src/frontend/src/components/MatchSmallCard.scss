@@ -1,0 +1,15 @@
+.MatchSmallCard {
+    background-color: #F8D210;
+    color: black;
+    padding: 1rem 1rem;
+
+    a {
+        color: black;
+        font-weight: bolder;
+    }
+
+    a:hover {
+        color:#333131;
+        transform: scale(1.5);
+    }
+}

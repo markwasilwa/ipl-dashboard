@@ -1,13 +1,15 @@
 import { React, useEffect, useState } from 'react';
-import { useParams  } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import MatchDetailCard from '../components/MatchDetailCard';
 import MatchSmallCard from '../components/MatchSmallCard';
+import './TeamPage.scss';
 
 export const TeamPage = ({ ...props }) => {
 
     const [team, setTeam] = useState(null)
 
-    const { teamName } = useParams();
+    const { teamName, year } = useParams();
+    const teamMatchesUrl = `/teams/${teamName}/matches/2020`;
 
     useEffect(
         () => {
@@ -24,14 +26,24 @@ export const TeamPage = ({ ...props }) => {
     }
 
     return (
-        <div className="teamPage">
-            <h1>{team && team.teamName}</h1>
-            
-            <MatchDetailCard match={team?.matches[0]} teamName={teamName} />
+        <div className="TeamPage">
+            <div className="team-name-container">
+                <h1 className="team-name">{team && team.teamName}</h1>
+            </div>
+            <div className="win-vs-loss-container">
+                <span className="win-vs-loss">Wins vs Losses</span>
+            </div>
+            <div className="match-detail-container">
+                <MatchDetailCard match={team?.matches[0]} teamName={teamName} />
+            </div>
             { team && team.matches.slice(1).map((match, idx) => {
                     return <MatchSmallCard key={idx} match={match} teamName={teamName} />
                 })
             }
+            <div className="more-matches-container">
+                <Link to={teamMatchesUrl}>More matches</Link>
+            </div>
+           
         </div>
     );
 }

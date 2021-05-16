@@ -1,0 +1,41 @@
+.TeamPage {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: .5rem;
+
+
+    .team-name-container {
+        grid-column: span 3;
+        display: flex;
+        background-color: #F51720;
+        padding: 1rem 0;
+        
+        .text-name {
+            align-self: end;
+        }
+    }
+
+    .win-vs-loss-container {
+        background-color: #FA26A0;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .match-detail-container {
+        grid-column: span 4;
+        margin: .5rem 0;
+        padding: 1rem 1rem;
+        background-color: #2FF3E0;
+        color: black;
+    }
+
+    .more-matches-container {
+        text-align: end;
+        align-self: end;
+        padding-top: 3.5rem;
+    }
+
+}
