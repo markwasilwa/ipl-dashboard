@@ -1,0 +1,14 @@
+.MatchPage {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .match-page-sidebar {
+        grid-column: span 1;
+        position: fixed;
+        margin-left: -4em;
+    }
+
+    .match-page-main {
+        
+    }
+}
