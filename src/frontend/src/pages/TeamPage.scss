@@ -10,19 +10,15 @@
     .team-name-container {
         grid-column: span 3;
         display: flex;
-        background-color: #F51720;
-        padding: 3rem 1rem;
-        
-        .text-name {
-            align-self: end;
-        }
+        padding: 0.5rem .5rem;
+        align-self: end;
     }
 
     .win-vs-loss-container {
-        background-color: #FA26A0;
-        padding: 1rem 0;
+        padding: 0 2rem;
         text-align: center;
         align-content: flex-end;
+        color: White;
     }
 
     .match-detail-container {
