@@ -1,0 +1,14 @@
+.TeamTile {
+  padding: 1.5em 1.5em;
+  border: 1px cadetblue solid;
+  height: 4em;
+  text-align: center;
+
+  &:hover {
+    border: 2px #F8D210 solid;
+    transform: scaleX(1.01);
+    background-color: #333131;
+  }
+}
+
+

@@ -19,7 +19,7 @@ export const MatchDetailCard = ({ ...props }) => {
         <div className="MatchDetailCard">
             <h3>Latest Matches</h3>
             <h4>Match Details</h4>
-            <h4 class="match-against">vs <Link to={otherTeamRoute}>{otherTeam}</Link></h4>
+            <h4 className="match-against">vs <Link to={otherTeamRoute}>{otherTeam}</Link></h4>
             <div>
                 <h4>On {date} at {venue}</h4>
                 <h4>{matchWinner} won by {resultMargin} {result}</h4>

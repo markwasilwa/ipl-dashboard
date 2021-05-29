@@ -1,0 +1,7 @@
+.HomePage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: .5em;
+  row-gap: .5em;
+}
