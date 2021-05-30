@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import './MatchSidebar.scss';
 
 export const MatchSidebar = ({ ...props }) => {
-    
-    const iplYears = generateYears(2008).reverse();
+
+    const startYear = process.env.REACT_APP_DASHBOARD_MATCHES_START;
+    const iplYears = generateYears(startYear).reverse();
     const { teamName } = props;
 
     return (
@@ -14,7 +15,7 @@ export const MatchSidebar = ({ ...props }) => {
                         .slice(1)
                         .reverse()
                         .map(yr => {
-                        const teamMatchesByYearUrl = `${process.env.REACT_APP_API_URL}/teams/${teamName}/matches/${yr}`;
+                        const teamMatchesByYearUrl = `/teams/${teamName}/matches/${yr}`;
                         
                         return <li key={yr} className="match-sidebar-li">
                             <Link className="match-sidebar-link" to={teamMatchesByYearUrl}>{yr}</Link>

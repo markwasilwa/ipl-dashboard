@@ -28,9 +28,13 @@ export const TeamPage = ({ ...props }) => {
                 <MatchSidebar teamName={teamName} />
             </div>
             <div className="match-page-main">
-                <h1>Match Page</h1>
+                <h1 className="match-page-header">Match Page</h1>
                 {
-                    matches.map(match => <MatchDetailCard key={match.id} match={match} teamName={teamName} />)
+                   matches.length > 0 ?
+                       matches.map(match => <div className="match-detail-container">
+                           <MatchDetailCard key={match.id} match={match} teamName={teamName} />
+                       </div>) :
+                       `${teamName} matches for ${year} found`
                 }
             </div>
         </div>
