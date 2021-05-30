@@ -5,7 +5,7 @@ import './HomePage.scss';
 export const HomePage = ({ ...props }) => {
 
     const [teams, setTeams] = useState([])
-    const api_url = "http://localhost:8080/teams"
+    const api_url =  `${process.env.REACT_APP_API_URL}/teams`
 
     useEffect(
         () => {

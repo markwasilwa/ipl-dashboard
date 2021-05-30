@@ -9,13 +9,13 @@ export const TeamPage = ({ ...props }) => {
 
     const [team, setTeam] = useState(null)
 
-    const { teamName, year } = useParams();
+    const { teamName } = useParams();
     const teamMatchesUrl = `/teams/${teamName}/matches/2020`;
 
     useEffect(
         () => {
             const fetchMatches = async () => {
-                const response = await fetch(`http://localhost:8080/team/${teamName}`)
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/team/${teamName}`)
                 const data = await response.json()
                 setTeam(data)
             }

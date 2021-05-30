@@ -14,7 +14,7 @@ export const MatchSidebar = ({ ...props }) => {
                         .slice(1)
                         .reverse()
                         .map(yr => {
-                        const teamMatchesByYearUrl = `/teams/${teamName}/matches/${yr}`;
+                        const teamMatchesByYearUrl = `${process.env.REACT_APP_API_URL}/teams/${teamName}/matches/${yr}`;
                         
                         return <li key={yr} className="match-sidebar-li">
                             <Link className="match-sidebar-link" to={teamMatchesByYearUrl}>{yr}</Link>
